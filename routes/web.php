@@ -24,6 +24,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/test', function () {
+    return 'test';
+});
 //Route::get('/dashboard', [CardUserController::class, 'index'])->middleware(['auth', 'verified','user'])->name('dashboard');
 
 Route::middleware('auth', 'user','verified' )->group(function () {

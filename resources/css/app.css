@@ -1,0 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+<<<<<<< HEAD
+=======
+body{
+    overflow-x: hidden;
+}
+>>>>>>> 7e3746e (Main commit)

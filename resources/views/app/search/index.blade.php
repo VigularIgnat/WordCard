@@ -83,7 +83,7 @@
             
            </div>
 
-           <span class="text-lg"> Followers - {{strval($folder->followers)}}</span>
+           
 
            <div class="flex">
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -95,10 +95,7 @@
                 {{strval($folder->followers)}}
            </div>
 
-           <span class="text-lg"> </span>
-
-
-           <span class="text-lg"> Followers - {{strval($folder->followers)}}</span>
+           
 
         </div>
         

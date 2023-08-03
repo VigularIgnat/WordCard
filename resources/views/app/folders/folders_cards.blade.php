@@ -114,14 +114,7 @@
     
     <div class="container  flex flex-row flex-wrap flex-4 justify-start  space-x-5 lg:space-y-4 md:space-y-8 ">
     @foreach ($cards as $card)
-
-    <div class="w-60  h-52 max-h-52 border-4 border-gray-200 rounded-xl mt-4 ml-5 flex flex-col p-2 overflow-y-auto ">
-
     <div class="w-72  h-60 border-4 border-gray-200 rounded-xl mt-4 ml-5 flex flex-col p-2 overflow-y-auto relative">
-
-
-    <div class="w-60  h-52 max-h-52 border-4 border-gray-200 rounded-xl mt-4 ml-5 flex flex-col p-2 overflow-y-auto ">
-
         <div class="word flex justify-between">
             <div class="word"> {{$card->word}}</div>
             <div class="edit flex space-x-3">    
@@ -182,7 +175,7 @@
                 
                 @endif
                
-            <div>
+            
             
 
         </div>
@@ -204,13 +197,7 @@
             <button id='button_trans{{$card->id}}' onclick="showTranslation('demo_trans{{$card->id}}','button_trans{{$card->id}}')" >Show translation</button>
             
         </div>
-
-        <div class="botton flex justify-end">
-
         <div class="botton  absolute bottom-2 right-4">
-
-        <div class="botton flex justify-end">
-
             
             <span>{{$card->level * 25}}</span>
         </div>

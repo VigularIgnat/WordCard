@@ -10,10 +10,14 @@
                     <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none transition ease-in-out duration-150">
                         @isset(Auth::user()->name )
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <div>({{ Auth::user()->name }})</div>
 =======
                         <div>{{ Auth::user()->name }}</div>
 >>>>>>> 7e3746e (Main commit)
+=======
+                        <div>({{ Auth::user()->name }})</div>
+>>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
                         @endisset
                         
 

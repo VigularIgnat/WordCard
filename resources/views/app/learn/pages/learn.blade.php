@@ -2,6 +2,9 @@
 
 @section('learn_section')
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
     @isset($card)
     <div class="container w-100">
         <div class="main ml-4">
@@ -27,6 +30,7 @@
                     main2
         
                 </div>
+<<<<<<< HEAD
 =======
     @isset($cards)
     
@@ -52,6 +56,8 @@
             
            
 >>>>>>> 7e3746e (Main commit)
+=======
+>>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
         </div>
     </div>
    

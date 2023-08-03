@@ -83,6 +83,7 @@
             
            </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
            <span class="text-lg"> Followers - {{strval($folder->followers)}}</span>
 =======
            <div class="flex">
@@ -97,6 +98,9 @@
 
            <span class="text-lg"> </span>
 >>>>>>> 7e3746e (Main commit)
+=======
+           <span class="text-lg"> Followers - {{strval($folder->followers)}}</span>
+>>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
         </div>
         
         <div class="container  flex flex-row flex-wrap flex-4 justify-start space-x-5 lg:space-y-4 md:space-y-4 items-start">
@@ -211,14 +215,20 @@
     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
     let onsubmit=function(){
 
     }
         $("search").addEventListener("keyup", keyUpp);
+<<<<<<< HEAD
 =======
    
     $("search").addEventListener("keyup", keyUpp);
 >>>>>>> 7e3746e (Main commit)
+=======
+>>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
         //$("search").addEventListener("onsubmit", keyUpp);
       
 

@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
 body{
     overflow-x: hidden;
 }
->>>>>>> 7e3746e (Main commit)
-=======
->>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
+

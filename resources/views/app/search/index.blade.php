@@ -82,10 +82,9 @@
             
             
            </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
            <span class="text-lg"> Followers - {{strval($folder->followers)}}</span>
-=======
+
            <div class="flex">
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M12.3413 22.6586C17.8642 22.6586 22.3413 18.1814 22.3413 12.6586C22.3413 7.13572 17.8642 2.65857 12.3413 2.65857C6.81846 2.65857 2.34131 7.13572 2.34131 12.6586C2.34131 18.1814 6.81846 22.6586 12.3413 22.6586Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -97,10 +96,10 @@
            </div>
 
            <span class="text-lg"> </span>
->>>>>>> 7e3746e (Main commit)
-=======
+
+
            <span class="text-lg"> Followers - {{strval($folder->followers)}}</span>
->>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
+
         </div>
         
         <div class="container  flex flex-row flex-wrap flex-4 justify-start space-x-5 lg:space-y-4 md:space-y-4 items-start">
@@ -214,21 +213,16 @@
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
-    let onsubmit=function(){
 
-    }
+
+
+    
         $("search").addEventListener("keyup", keyUpp);
-<<<<<<< HEAD
-=======
+
+
    
     $("search").addEventListener("keyup", keyUpp);
->>>>>>> 7e3746e (Main commit)
-=======
->>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
+
         //$("search").addEventListener("onsubmit", keyUpp);
       
 

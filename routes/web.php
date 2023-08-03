@@ -24,18 +24,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 Route::get('/test', function () {
     return 'test';
 });
-=======
->>>>>>> 7e3746e (Main commit)
-=======
+
+
 Route::get('/test', function () {
     return 'test';
 });
->>>>>>> 7e9a6241fa429e8e03c47966cdc979de716f38cd
+
 //Route::get('/dashboard', [CardUserController::class, 'index'])->middleware(['auth', 'verified','user'])->name('dashboard');
 
 Route::middleware('auth', 'user','verified' )->group(function () {

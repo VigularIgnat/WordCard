@@ -17,7 +17,7 @@
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen mx-auto bg-gray-100 object-center">
-            @include('layouts.navigation2')
+            @include('layouts.navigation')
 
             <!-- Page Heading -->
             

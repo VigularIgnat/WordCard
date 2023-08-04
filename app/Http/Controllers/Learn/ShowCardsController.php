@@ -25,15 +25,19 @@ class ShowCardsController extends Controller
         if(isset($request->folder_id)){
             $this->folder_id=$request->folder_id;
             Cache::put('id', $this->folder_id); 
-           
-
+            
 
             $this->folder_service= new FolderLearnServiceProvider($this->folder_id, auth()->id());
+            
+            Cache::put('folder_service', $this->folder_service); 
             //app(ExternalApiHelper::class($folder_id));
             
            // dd($this->folder_service);
-            //dd(parent::CheckAccess());
-            if(!$this->folder_service->getAccess()){
+            //dd($this->folder_service->getAccess());
+            $getaccess=$this->folder_service->getAccess();
+            $access=$getaccess['access'];
+            //dd($access);
+            if(!$access){
                 return to_route('dashboard');
             }
             
@@ -50,33 +54,38 @@ class ShowCardsController extends Controller
         Cache::put('type', $request->type);
 
         $this->folder_id=Cache::get('id', $this->folder_id);
-        $this->folder_service= new FolderLearnServiceProvider($this->folder_id, auth()->id());
-        
+        $this->folder_service= Cache::get('folder_service');
         $this->permissions=$this->folder_service->getAccess();
         $this->cards_amount=$this->folder_service->getCardsNum();
         if($this->permissions['access']){
-            
+            Cache::put('cur_card', 0);
             return $this->handle($request->type,$permissions=$this->permissions, $this->cards_amount);
         }
         
     }
    private function handle(int $type, array $permissions, int $cards_amount){
-        $num_cards=$this->cards_amount;
+        $this->card_amount=$cards_amount;
         if($type==1){
-            $card=true;
-            Cache::put('cur_card', 1);
-            //$this->render();
-            return view('app.learn.pages.learn', compact('card'));
+            $this->cur_card=Cache::get('cur_card');
+            //dd($this->cur_card);
+            $cards=$this->render($this->cur_card,$this->card_amount);
+           // dd($cards['values']);
+            /*foreach($cards['values'] as $card){
+                dd($card['translation']);
+            } */
+           return view('app.learn.pages.learn', compact('cards'));
         }
         else{
             
         }
    }
-   private function render(){
-        
+   private function render(int $cur_card_num, int $cards_amount){
+    //dd($this->folder_service);
+    $this->folder_service=Cache::get('folder_service');
+    return $this->folder_service->getCard($cur_card_num, $cards_amount);
    }
 
     public function Close(){
-        
+        Cache::flush();
     }
 }

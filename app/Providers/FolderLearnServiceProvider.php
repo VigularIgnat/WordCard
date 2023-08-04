@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use App\Models\Folder;
+use Illuminate\Support\Arr;
+use App\Http\Resources\CardsResource;
 class FolderLearnServiceProvider extends ServiceProvider
 {
     /**
@@ -23,14 +25,19 @@ class FolderLearnServiceProvider extends ServiceProvider
         $access=false;
         //dd($this->folder);
         $owner=$this->folder->user_id==$this->user_id;
+       // dd($owner);
         if($owner){
             $access=true;
+            
         }
+
         else if($this->folder->status==1){
             $access=true;
         }
         return ['owner'=>$owner,'access'=>$access];
     }
+
+    
 
     public function getFolder(){
         return $this->folder;
@@ -41,19 +48,42 @@ class FolderLearnServiceProvider extends ServiceProvider
         return $cards_num;
     }
 
-    public function getCard($card_num, $num_cards){
+    public function getCard(int $cur_card_num, int $cards_amount){
         $card=$this->folder->cards()->where('folder_id', $this->folder->id)->get();
-        
-        $cards['main']=$card;
-        $cards_values=getCardOptions($card_id);
-      //  array_push($cards_values,)
-        $cards['values']=getCardOptions($card_id);
+        $cur_card=$card[$cur_card_num];
+        //dd($cur_card['id']);
+        $cur_card_id=$cur_card['id'];
+        $cards['main']=$cur_card;
+        $cards_values=$this->getCardOptions($cur_card_id, $cards_amount);
+        $main_option=$cur_card->toArray();
+        array_push($cards_values, $main_option);
+        $cards_values=Arr::shuffle($cards_values);
+        $cards['values']=$cards_values;
+        return $cards;
 
     }
-    public function getCardOptions($card_num){
-       // $cards_num=$this->folder->cards()->select('translation')->where('folder_id', $this->folder->id)->where('id', '!=', $card_id)->get();
+    public function getCardOptions($cur_card_id, $cards_amount){
+        $translation_options=$this->to_array($this->folder->cards()->select('translation')->where('folder_id', $this->folder->id)->where('id', '!=', $cur_card_id)->get());
+        
+        $arr_options=[];
 
-        return $cards_num;
+        if($cards_amount<=4){
+            $arr_options=Arr::random($translation_options,1);
+            
+        }
+        else if($cards_amount>4){
+            $arr_options=Arr::random($translation_options,3);
+        }
+        return $arr_options;
     }
    
+    public function to_array($collection){
+        $arr = [];
+        foreach ($collection as $card) {
+            array_push($arr,$card->toArray()); // Assuming Card model has an toArray() method
+        }
+        return $arr;
+    
+    }
+    
 }
